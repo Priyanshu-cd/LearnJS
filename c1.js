@@ -1,28 +1,39 @@
-// Conditional Statements (like c/c++):
-let condition1=false
-let condition2=false
+// LOOPS (like c/c++):
 
-if (condition1 && condition2){
-    console.log("Both true");   
+//While : 
+
+const arr = [1,2,3,99,45,67];
+
+let i = 0
+let length = arr.length
+
+console.log("WHILE LOOP:");
+while (i< length){
+    console.log(i,arr[i]);
+    i++;
+
 }
-else if (condition1 || condition2){
-    console.log("one of them is true"); 
+
+//For Loop:
+
+console.log("FOR LOOP:");
+
+for (let j=0;j<length;j++){
+
+    if (j %2==0){continue;} //went to next itration.
+
+    if (j == 5){break;} //break the loop and out.
+    console.log(j,arr[j]);
+    
 }
-else{
-    console.log("None of them is true");  
-}
 
-//Example (Age checking for driving licence):
-function ageChk(age){
-    if (age >= 18){
-        console.log("Eligible for DL");  }
-    else if (age > 16 && age < 18){
-        console.log("Eligible for Child DL")    }
-    else{
-        console.log("Not Eligible");    }   
-    }
+//DO-WHILE LOOP:
 
-ageChk(18) //Eligible for DL
-ageChk(17) //Eligible for Child DL
-ageChk(11) //Not Eligible
+console.log("DO-WHILE LOOP:");
 
+let k = 0
+do{
+    console.log(k,arr[k]);
+    k++;
+}while(k<length)
+    
