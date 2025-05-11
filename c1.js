@@ -1,39 +1,38 @@
-// LOOPS (like c/c++):
+// return Examples:
 
-//While : 
+function addStr (str1,str2){
 
-const arr = [1,2,3,99,45,67];
+    console.log("!str1:",!str1 ,"!str2:",!str2);// !variable = undefined .'. true
+    
+    // Check one of them is undefined...
+    if (!str1 || !str2){
+        return "Value not exists!";
+        /*
+            return
 
-let i = 0
-let length = arr.length
+            Xerror
+            in this the function get out normally. and if value=func() // gives undefined
+        */
+        
+    }
+        
+    else{
+        return str1+ " "+str2;}
 
-console.log("WHILE LOOP:");
-while (i< length){
-    console.log(i,arr[i]);
-    i++;
-
+    //return str1+ " "+str2; // Xcondition
 }
 
-//For Loop:
+// Xcondition
+let ans = addStr() // default (undefined,undefined) ; !str1: true !str2: true
+console.log(ans); //undefined undefined
 
-console.log("FOR LOOP:");
+// after condtition:
+ans = addStr("Priyanshu","Sharma") // !str1: false !str2: false
+console.log(ans) // Priyanshu Sharma
 
-for (let j=0;j<length;j++){
+ans = addStr() //!str1: true !str2: true
+console.log(ans) // Value not exists!
 
-    if (j %2==0){continue;} //went to next itration.
-
-    if (j == 5){break;} //break the loop and out.
-    console.log(j,arr[j]);
-    
-}
-
-//DO-WHILE LOOP:
-
-console.log("DO-WHILE LOOP:");
-
-let k = 0
-do{
-    console.log(k,arr[k]);
-    k++;
-}while(k<length)
-    
+// return 
+console.log("return");
+addStr()
