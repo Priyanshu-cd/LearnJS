@@ -1,38 +1,74 @@
-// return Examples:
+// C1 Ques:
 
-function addStr (str1,str2){
+// 1 
+// 1. Define a variable called name and set it equal to a string that contains your name. Then, demonstrate how you would change its value to your full name.
 
-    console.log("!str1:",!str1 ,"!str2:",!str2);// !variable = undefined .'. true
+let my_name = "Priyanshu"
+console.log(my_name);
+my_name = "Priyanshu Sharma"
+console.log(my_name);
+
+//2 
+// 2. How would you compare two variables, a and b, to check equality?
+
+const a = 3
+const b = '3'
+console.log(a == b); //true
+console.log(a === b ); //false
+
+//3
+// 3. Write an if...else statement in JavaScript that checks if a number stored in a variable age is greater than 18. If true, it should log "Adult" to the console; otherwise, it should log "Minor".
+
+const age = 18
+if (age>=18){
+    console.log("Adult");
     
-    // Check one of them is undefined...
-    if (!str1 || !str2){
-        return "Value not exists!";
-        /*
-            return
-
-            Xerror
-            in this the function get out normally. and if value=func() // gives undefined
-        */
-        
-    }
-        
-    else{
-        return str1+ " "+str2;}
-
-    //return str1+ " "+str2; // Xcondition
+}else{console.log("Minor");
 }
 
-// Xcondition
-let ans = addStr() // default (undefined,undefined) ; !str1: true !str2: true
-console.log(ans); //undefined undefined
+//4
+// 4. Create a for loop that iterates from 0 to 10, but only prints even numbers to the console.
 
-// after condtition:
-ans = addStr("Priyanshu","Sharma") // !str1: false !str2: false
-console.log(ans) // Priyanshu Sharma
+for( let i = 0;i<=10;i++){
+    if (i%2==0){
+        console.log(i);
+        
+    }
+}
 
-ans = addStr() //!str1: true !str2: true
-console.log(ans) // Value not exists!
+//5
+// 5. Given an array numbers, write a while loop that continues to sum the numbers until the sum is greater than 100, then exits the loop.
 
-// return 
-console.log("return");
-addStr()
+const arr = [22,3,45,5,8,99]
+let i = 0
+let sum = 0;
+while (i<arr.length){
+
+    if (sum>100){break;}
+    else{
+    sum = sum + arr[i];console.log("Sum:",sum)}
+    i++;
+}
+
+//6
+// 6. Define a function named calculateArea that takes two parameters, width and height, and returns the area of a rectangle. // width * height
+
+function calculateArea(l,w){
+    if (!l || !w){
+        return
+    }else{
+        return l*w
+        
+    }
+}
+ans=calculateArea(5,4) 
+console.log(ans);//20
+
+calculateArea() //nothing just go out.
+
+ans2=calculateArea()
+console.log(ans2); //undefined
+
+
+
+
