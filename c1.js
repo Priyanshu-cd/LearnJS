@@ -1,38 +1,28 @@
-// Operators :
+// Conditional Statements (like c/c++):
+let condition1=false
+let condition2=false
 
-/* 
+if (condition1 && condition2){
+    console.log("Both true");   
+}
+else if (condition1 || condition2){
+    console.log("one of them is true"); 
+}
+else{
+    console.log("None of them is true");  
+}
 
-    =   "Assignment" // Assign value to variables,
-    + - / * %   "Arithmatical operators",
+//Example (Age checking for driving licence):
+function ageChk(age){
+    if (age >= 18){
+        console.log("Eligible for DL");  }
+    else if (age > 16 && age < 18){
+        console.log("Eligible for Child DL")    }
+    else{
+        console.log("Not Eligible");    }   
+    }
 
-    Comparison Operators( return Boolean): true , false
-
-    ==  "Soft check" // xtype only value matters.
-    === "Hard check" // value and type as well.
-    !=   "Not Equal" // Invert Boolean Operation.
-
-    Logical Operators (Gates) like c/c++ :
-
-    &&  AND
-    ||  OR
-    !   INVERSE
-*/
-//Example Comparison:
-console.log("Soft Check \'6\' == 6",'6' == 6);  //Soft Check '6' == 6 true
-console.log("\nHard Check \'6\' == 6",'6' === 6);   //Hard Check '6' == 6 false
-
-//Ex Logical:
-let found = true
-console.log("!found = true:",!found);   //!found = true: false
-
-//Just for knowledge..
-console.log("!0 :",!0 ,"!1 :",!1 ,"!\'\':",!'');//!0 : true !1 : false !'': true
-
-// typeof :
-console.log(typeof found); //boolean
-console.log(typeof 1239.99); //number
-console.log(typeof [1,2,3,99]) //object Xarray.
-
-const typeCheck = typeof "Priyanshu" //storing type..
-console.log(typeCheck); //string
+ageChk(18) //Eligible for DL
+ageChk(17) //Eligible for Child DL
+ageChk(11) //Not Eligible
 
