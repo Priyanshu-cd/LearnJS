@@ -1,23 +1,26 @@
-// Data types
-// Number , String , null , undefined , Boolean(true,false)
+//Method or Function :
 
-//object (like dict) :
-let self = "Priyanshu"
-
-let family = {
-//key(variable): value,
-    father:"Rakesh",
-    mother:"Monika",
-    sister:"Prerna",
-    me:self,
-    nest:{nest2:self},
+// like c/c++ but 'function' Keyword :
+function myFunc(){
+    console.log("Made my first func, yeahh!");
+    return "Priyanshu"
+    
 }
-console.log("\'Object\'",family);
-console.log(family.me);
+console.log(myFunc); //return type : [Function: myFunc]
 
+// Take return value :
+let valueReturn = myFunc()
+console.log("Return:",valueReturn);
 
-//Array (like list) :
-let arr = [1,2,3,4,5,6,99]
-console.log("\'Array\'",arr);
-console.log("Last element in array is",arr[arr.length - 1]);
+// function with aruguments :
+function Add(a,b){
+    return a+b
+}
+
+let ans = Add(4,1)
+console.log("Add(ans):",ans);
+
+//Copy func or Assign :
+let copy_add = Add
+console.log("copy_add:",copy_add(9,1));
 
