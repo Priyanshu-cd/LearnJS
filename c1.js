@@ -1,26 +1,38 @@
-//Method or Function :
+// Operators :
 
-// like c/c++ but 'function' Keyword :
-function myFunc(){
-    console.log("Made my first func, yeahh!");
-    return "Priyanshu"
-    
-}
-console.log(myFunc); //return type : [Function: myFunc]
+/* 
 
-// Take return value :
-let valueReturn = myFunc()
-console.log("Return:",valueReturn);
+    =   "Assignment" // Assign value to variables,
+    + - / * %   "Arithmatical operators",
 
-// function with aruguments :
-function Add(a,b){
-    return a+b
-}
+    Comparison Operators( return Boolean): true , false
 
-let ans = Add(4,1)
-console.log("Add(ans):",ans);
+    ==  "Soft check" // xtype only value matters.
+    === "Hard check" // value and type as well.
+    !=   "Not Equal" // Invert Boolean Operation.
 
-//Copy func or Assign :
-let copy_add = Add
-console.log("copy_add:",copy_add(9,1));
+    Logical Operators (Gates) like c/c++ :
+
+    &&  AND
+    ||  OR
+    !   INVERSE
+*/
+//Example Comparison:
+console.log("Soft Check \'6\' == 6",'6' == 6);  //Soft Check '6' == 6 true
+console.log("\nHard Check \'6\' == 6",'6' === 6);   //Hard Check '6' == 6 false
+
+//Ex Logical:
+let found = true
+console.log("!found = true:",!found);   //!found = true: false
+
+//Just for knowledge..
+console.log("!0 :",!0 ,"!1 :",!1 ,"!\'\':",!'');//!0 : true !1 : false !'': true
+
+// typeof :
+console.log(typeof found); //boolean
+console.log(typeof 1239.99); //number
+console.log(typeof [1,2,3,99]) //object Xarray.
+
+const typeCheck = typeof "Priyanshu" //storing type..
+console.log(typeCheck); //string
 
