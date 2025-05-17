@@ -1,65 +1,32 @@
-// Dict / Object OPERATIONS(key:value,):
+// SCOPES:
 
-const bio ={
-    name : "Priyanshu",
-    age : 20 ,
-    "Profession is":"Student" //with space
-
+//Global Scope
+let num = 99
+//not good approch to use same names..
+function scope(){
+    let num = 66 //Local Scope
+    console.log(num);   
 }
+scope()//66 
+console.log(num);//99
+// loops , funcs and other similar methods has their scopes..
 
-//Read
-let name = "name"
-console.log(bio[name] ,bio['name']) //Priyanshu Priyanshu
-//if no spaces
-console.log(bio.age);
-// if key doesn't exist
-console.log(bio["random"]) //undefined
+// Closer function->function ( static variable for the function):
+function counter(){
+    let rollno = 0 //static Encapsulated data , remembered in the obj
 
-//ADD
-bio['new_key'] = "new_value"
-console.log(bio); //new_key: 'new_value' if space then 'key'
-
-//Change
-bio[name]="Monika"
-console.log(bio.name); //Monika
-
-//Delete 
-delete bio.new_key // or bio["new_key"]
-console.log(bio);
-
-// Check in dict:
-console.log("new_key" in bio); //check key ,false
-
-//NESTED dicts:
-
-bio["friends"]={
-    "Tarun":{
-        age:22
+    return function(){
+        rollno++;
+        return rollno
+        // retourn rolln
     }
 }
-console.log(bio);
-/* {
-  name: 'Monika',
-  age: 20,
-  'Profession is': 'Student',
-  friends: { Tarun: { age: 22 } }
-} */
-console.log("Tarun age is",bio.friends.Tarun.age) //Tarun age is 22 , use ["key"]..also
+s = {}
 
-// OBJECT method in dicts (key , values etc)..
-all_keys_of_bio = Object.keys(bio)
-console.log(all_keys_of_bio); //[ 'name', 'age', 'Profession is', 'friends' ]
+let rollno = counter() //obj
 
-all_values_of_bio = Object.values(bio)
-console.log(all_values_of_bio); //[ 'Monika', 20, 'Student', { Tarun: { age: 22 } } ]
+s[rollno()]="Priyanshu"
+s[rollno()]="Tarun"
 
-all_key_values_of_bio = Object.entries(bio) // array of [key,value].
-console.log(all_key_values_of_bio);
-/* 
-[
-  [ 'name', 'Monika' ],
-  [ 'age', 20 ],
-  [ 'Profession is', 'Student' ],
-  [ 'friends', { Tarun: [Object] } ]
-]
-*/
+console.log(s); //{ '1': 'Priyanshu', '2': 'Tarun' }
+
