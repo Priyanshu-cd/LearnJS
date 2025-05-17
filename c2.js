@@ -1,58 +1,65 @@
-//List oprations:
-const str = "Priyanshu is great dev"
+// Dict / Object OPERATIONS(key:value,):
 
-let arr = str.split(' ')
-console.log(arr); //[ 'Priyanshu', 'is', 'great', 'dev' ]
+const bio ={
+    name : "Priyanshu",
+    age : 20 ,
+    "Profession is":"Student" //with space
+
+}
 
 //Read
-console.log(arr[0]) //Priyanshu (index = 0)
+let name = "name"
+console.log(bio[name] ,bio['name']) //Priyanshu Priyanshu
+//if no spaces
+console.log(bio.age);
+// if key doesn't exist
+console.log(bio["random"]) //undefined
 
-//change
-arr[0] = "Tarun"
-console.log(arr); //[ 'Tarun', 'is', 'great', 'dev' ]
+//ADD
+bio['new_key'] = "new_value"
+console.log(bio); //new_key: 'new_value' if space then 'key'
 
-//Add
-arr.push("Lie")
-console.log(arr); //[ 'Tarun', 'is', 'great', 'dev', 'Lie' ]
+//Change
+bio[name]="Monika"
+console.log(bio.name); //Monika
 
-//POP()
-arr.pop() //remove last
-console.log(arr); //[ 'Tarun', 'is', 'great', 'dev' ]
+//Delete 
+delete bio.new_key // or bio["new_key"]
+console.log(bio);
 
-//Operations: all like string , includes(value)=bool ,indexOf("dev") .slice(start_index)etc
-console.log(arr.join()) //Tarun,is,great,dev
-console.log(arr.join(" ")) //Tarun is great dev (join with " ", "_")
+// Check in dict:
+console.log("new_key" in bio); //check key ,false
 
-console.log(arr.sort()) //[ 'Tarun', 'dev', 'great', 'is' ] alphbetically sorted..
+//NESTED dicts:
 
-//MULTIDIMENTION ARRAY:
-arr2 = [[3] , [4] , [5]] 
-arr2[0][0] = 99
-console.log(arr2[0][0]) // 99
-
-for(let i = 0;i<arr2.length;i++){
-    list1=arr2[i]
-    
-    for(let j=0;j<list1.length;j++){
-        console.log(list1[j] , arr2[i][j]);
-        // console.log(arr2[i][j]);   
+bio["friends"]={
+    "Tarun":{
+        age:22
     }
 }
-/*
-99 99
-4 4
-5 5 */
+console.log(bio);
+/* {
+  name: 'Monika',
+  age: 20,
+  'Profession is': 'Student',
+  friends: { Tarun: { age: 22 } }
+} */
+console.log("Tarun age is",bio.friends.Tarun.age) //Tarun age is 22 , use ["key"]..also
 
-//Some method changes the whole array then assign:
-/*
-arr4 = arr3.pop() , sort() = 
-                    arr3.pop()
-                    arr4=arr3
+// OBJECT method in dicts (key , values etc)..
+all_keys_of_bio = Object.keys(bio)
+console.log(all_keys_of_bio); //[ 'name', 'age', 'Profession is', 'friends' ]
+
+all_values_of_bio = Object.values(bio)
+console.log(all_values_of_bio); //[ 'Monika', 20, 'Student', { Tarun: { age: 22 } } ]
+
+all_key_values_of_bio = Object.entries(bio) // array of [key,value].
+console.log(all_key_values_of_bio);
+/* 
+[
+  [ 'name', 'Monika' ],
+  [ 'age', 20 ],
+  [ 'Profession is', 'Student' ],
+  [ 'friends', { Tarun: [Object] } ]
+]
 */
-
-// Add 2 LISTS...
-//      0       1       2       3          
-// [ 'Tarun', 'is', 'great', 'dev' ]
-list1=arr.slice(0,2) // [ 'Tarun', 'is' ] ,2 is exclude
-list2 = arr.slice(3) // [ 'dev' ] 
-console.log(list1.concat(list2));
