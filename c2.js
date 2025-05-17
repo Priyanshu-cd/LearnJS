@@ -1,32 +1,13 @@
-// SCOPES:
+// Add modules from another js file like functions , variables etc...use:
 
-//Global Scope
-let num = 99
-//not good approch to use same names..
-function scope(){
-    let num = 66 //Local Scope
-    console.log(num);   
-}
-scope()//66 
-console.log(num);//99
-// loops , funcs and other similar methods has their scopes..
+//in importing file..
+// module.exports ={
+//     calculateArea,arr
+// }
 
-// Closer function->function ( static variable for the function):
-function counter(){
-    let rollno = 0 //static Encapsulated data , remembered in the obj
+//but all log is running from that importing file
 
-    return function(){
-        rollno++;
-        return rollno
-        // retourn rolln
-    }
-}
-s = {}
+// const { calculateArea } = require("./c1");
 
-let rollno = counter() //obj
-
-s[rollno()]="Priyanshu"
-s[rollno()]="Tarun"
-
-console.log(s); //{ '1': 'Priyanshu', '2': 'Tarun' }
-
+// ans=calculateArea(5,2)
+// console.log(ans);
