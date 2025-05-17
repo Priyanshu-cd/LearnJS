@@ -1,13 +1,35 @@
-// Add modules from another js file like functions , variables etc...use:
+// ERROR HANDLING:
 
-//in importing file..
-// module.exports ={
-//     calculateArea,arr
-// }
+//Try,Catch:
 
-//but all log is running from that importing file
+dict = {hello:"bro"}
+console.log(dict.new_key) //undefined
 
-// const { calculateArea } = require("./c1");
+try{
+    console.log(dict.new_key.nested_key) //undefined -> nested key (error)
+    }
+    //error
+catch (e){
+    console.error("Error::",e.message);   
+}
 
-// ans=calculateArea(5,2)
-// console.log(ans);
+// Create Custom Error:
+
+function isAdult(a){
+    try{
+        if(a<18){
+            throw new Error("Not Adult!")
+        }
+    }catch (e){
+        console.log("Error is",e.message);
+        
+    }
+}
+
+isAdult(12)//Error is Not Adult!
+
+console.log("Further executing..");
+
+/*
+You can use logs to further do debuggings...
+*/
